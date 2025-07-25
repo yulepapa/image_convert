@@ -84,8 +84,7 @@ def process_image_grayscale(image, target_width, target_height):
             data_list.append({
                 'x': x + 1,
                 'y': y + 1,
-                'brightness': int(brightness),
-                'brightness_inverted': 255 - int(brightness)
+                'brightness': int(brightness)
             })
     
     return pd.DataFrame(data_list)
@@ -124,7 +123,6 @@ def process_image_color(image, target_width, target_height):
                 'x': x + 1,
                 'y': y + 1,
                 'brightness': int(brightness),
-                'brightness_inverted': 255 - int(brightness),
                 'r': int(r),
                 'g': int(g),
                 'b': int(b),
@@ -345,7 +343,7 @@ def main():
                         1. **열**: x (연속형)
                         2. **행**: y (연속형) 
                         3. **마크**: Bar 또는 Square
-                        4. **크기**: brightness_inverted
+                        4. **크기**: brightness
                         5. **색상**: hex_color (HEX 값 사용)
                         6. **Y축 뒤집기** 필수!
                         """)
@@ -355,7 +353,7 @@ def main():
                         1. **열**: x (연속형)
                         2. **행**: y (연속형)
                         3. **마크**: Bar
-                        4. **크기**: brightness_inverted
+                        4. **크기**: brightness
                         5. **색상**: brightness (연속형)
                         6. **Y축 뒤집기** 필수!
                         """)
